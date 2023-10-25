@@ -11,9 +11,9 @@ const events = ref(null)
 
 const page = computed(() => props.page)
 
-const hasNextPage = computed(()=> {
-	const totalPages = Math.ceil(totalEvents.value / 2)
-	return page.value < totalPages
+const hasNextPage = computed(() => {
+  const totalPages = Math.ceil(totalEvents.value / 2)
+  return page.value < totalPages
 })
 
 onMounted(() => {
@@ -22,7 +22,7 @@ onMounted(() => {
     EventService.getEvents(2, page.value)
       .then((response) => {
         events.value = response.data
-		totalEvents.value = response.headers['x-total-count']
+        totalEvents.value = response.headers['x-total-count']
       })
       .catch((error) => {
         console.log(error)
@@ -48,7 +48,7 @@ onMounted(() => {
         id="page-next"
         :to="{ name: 'event-list', query: { page: page + 1 } }"
         rel="next"
-		v-if="hasNextPage"
+        v-if="hasNextPage"
         >Next Page</router-link
       >
     </div>
