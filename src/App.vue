@@ -14,7 +14,8 @@ const GStore = inject('GStore')
       <div class="wrapper">
         <nav>
           <RouterLink :to="{ name: 'EventList' }">Events</RouterLink> |
-          <RouterLink :to="{ name: 'about' }">About</RouterLink>
+          <RouterLink :to="{ name: 'about' }">About</RouterLink> |
+		  <RouterLink :to="{ name: 'TodoApp' }">Todo App</RouterLink>
         </nav>
       </div>
     </header>
@@ -57,4 +58,5 @@ nav a.router-link-exact-active {
 h2 {
   font-size: 20px;
 }
+
 </style>

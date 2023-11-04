@@ -71,6 +71,11 @@ const router = createRouter({
       name: 'NetworkError',
       component: NetworkError,
     },
+	{
+		path: '/todo',
+		name: 'TodoApp',
+		component: () => import('../views/TodoApp.vue'),
+	}
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) { // <----
