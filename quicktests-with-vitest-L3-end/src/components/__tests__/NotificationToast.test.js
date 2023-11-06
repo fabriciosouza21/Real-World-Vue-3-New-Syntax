@@ -11,6 +11,7 @@ describe('NotificationToast', () => {
 		expect(wrapper.classes()).toEqual(
 			expect.arrayContaining(["notification--error"])
 		)
+		expect(wrapper.html()).toMatchSnapshot()
 	})
 
 	test('renders the correct style for Sucess', () =>{
