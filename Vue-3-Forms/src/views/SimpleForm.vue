@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Create an event</h1>
-    <form>
+    <form @submit.prevent="sendForm" >
 
       <BaseSelect v-model="event.category" label="Category" :options="categories">
       </BaseSelect>
@@ -70,6 +70,20 @@ export default {
         { label: 'Yes', value: 1 },
         { label: 'No', value: 0 }
       ]
+    }
+  },
+  methods: {
+    sendForm () {
+      //    axios.post(
+      //  'https://my-json-server.typicode.com/Code-Pop/Vue-3-Forms/events',
+      //  this.event
+      // )
+      //  .then(function (response) {
+      //    console.log('Response', response)
+      //  })
+      //  .catch(function (err) {
+      //    console.log('Error', err)
+      //  })
     }
   },
   components: { BaseInput, BaseSelect, BaseCheckbox, BaseRadioGroup }
