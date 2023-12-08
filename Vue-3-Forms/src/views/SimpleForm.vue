@@ -37,23 +37,23 @@
 
       <h3>Are pets allowed?</h3>
       <div>
-        <input
-            type="radio"
-            v-model="event.pets"
-            :value="1"
-            name="pets"
-          />
-        <label>Yes</label>
+        <BaseRadio
+          v-model="event.pets"
+          label="Yes"
+          :value="1"
+          name="pets"
+        >
+        </BaseRadio>
       </div>
 
       <div>
-        <input
-          type="radio"
+        <BaseRadio
           v-model="event.pets"
+          label="No"
           :value="0"
           name="pets"
-        />
-        <label>No</label>
+        >
+        </BaseRadio>
       </div>
 
       <h3>Extras</h3>
