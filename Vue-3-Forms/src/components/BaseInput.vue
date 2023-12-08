@@ -6,7 +6,7 @@
     :placeholder="label"
     class="field"
     :value="modelValue"
-    @input="$emit('update:value', $event.target.value)"
+    @input="$emit('update:modelValue', $event.target.value)"
   >
 </template>
 
@@ -17,7 +17,7 @@ export default {
       type: String,
       default: ''
     },
-    value: {
+    modelValue: {
       type: [String, Number],
       default: ''
     }
