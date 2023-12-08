@@ -9,9 +9,7 @@
         :options="categories"
       >
       </BaseSelect>
-      <pre>
-        {{ event }}
-      </pre>
+
       <h3>Name & describe your event</h3>
 
       <BaseInput
@@ -60,28 +58,30 @@
 
       <h3>Extras</h3>
       <div>
-        <input
-          type="checkbox"
-          v-model="event.extras.catering"
-          class="field"
-        />
-        <label>Catering</label>
+      <BaseCheckbox
+        v-model="event.extras.catering"
+        label="Catering"
+      >
+      </BaseCheckbox>
       </div>
 
       <div>
-        <input
-          type="checkbox"
-          v-model="event.extras.music"
-          class="field"
-        />
-        <label>Live music</label>
+      <BaseCheckbox
+        v-model="event.extras.music"
+        label="Live music"
+      >
+      </BaseCheckbox>
       </div>
+      <pre>
+        {{ event }}
+      </pre>
       <button class="button -fill-gradient" type="submit">Submit</button>
     </form>
   </div>
 </template>
 
 <script>
+import BaseCheckbox from '../components/BaseCheckbox.vue'
 import BaseInput from '../components/BaseInput.vue'
 import BaseSelect from '../components/BaseSelect.vue'
 
@@ -110,6 +110,6 @@ export default {
       }
     }
   },
-  components: { BaseInput, BaseSelect }
+  components: { BaseInput, BaseSelect, BaseCheckbox }
 }
 </script>
