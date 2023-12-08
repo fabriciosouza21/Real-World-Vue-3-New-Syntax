@@ -1,5 +1,5 @@
 <template>
-  <label v-if="label" >{{ label }}</label>
+  <label :for="uuid" v-if="label" >{{ label }}</label>
   <input
     v-bind="$attrs"
     type="text"
