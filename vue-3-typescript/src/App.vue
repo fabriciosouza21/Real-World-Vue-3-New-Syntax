@@ -21,6 +21,12 @@ onMounted(() => {
   })
 })
 
+function addCount(num: number) {
+  if (count.value !== null) {
+    count.value += num
+  }
+}
+
 </script>
 
 <template>
