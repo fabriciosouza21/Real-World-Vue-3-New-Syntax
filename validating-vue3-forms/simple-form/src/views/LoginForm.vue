@@ -3,7 +3,8 @@
     <BaseInput
       label="Email"
       type="email"
-      v-model="email"
+      :modelValue="email"
+      @change="handleChange"
     :error="emailError"
     />
 
@@ -54,15 +55,20 @@ export default {
         return true
       }
     }
-    useForm({ validationSchema: validations })
+    const { setFieldValue } = useForm({ validationSchema: validations })
     const { value: email, errorMessage: emailError } = useField('email')
     const { value: password, errorMessage: passwordError } = useField('password')
+
+    const handleChange = (event) => {
+      setFieldValue('email', event.target.value)
+    }
+
     function onSubmit () {
 
     }
 
     return {
-      onSubmit, email, emailError, password, passwordError
+      onSubmit, email, emailError, password, passwordError, handleChange
     }
   }
 }
